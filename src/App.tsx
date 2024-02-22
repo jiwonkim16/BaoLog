@@ -1,10 +1,17 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import CustomGlobe from "./CustomGlobe";
+import Login from "./Login";
 
 function App() {
   return (
     <>
-      <CustomGlobe />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<CustomGlobe />}></Route>
+          <Route path="/login" element={<Login />}></Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
