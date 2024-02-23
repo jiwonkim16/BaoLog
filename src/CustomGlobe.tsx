@@ -18,11 +18,12 @@ function CustomGlobe() {
     color: "red",
   }));
   const navigate = useNavigate();
+
   return (
     <>
       <Globe
-        globeImageUrl="./1.jpg"
-        backgroundImageUrl="//unpkg.com/three-globe/example/img/night-sky.png"
+        globeImageUrl="./splash1.avif"
+        backgroundImageUrl="./splash2.avif"
         arcsData={arcsData}
         arcColor={"color"}
         arcDashLength={100}
