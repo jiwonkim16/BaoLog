@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css"; // bootstrap css file
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Login() {
   const [show, setShow] = useState(false);
@@ -38,6 +39,9 @@ function Login() {
           <Button variant="primary">Save Changes</Button>
         </Modal.Footer>
       </Modal>
+      <Link to="/">
+        <Button variant="primary">Home</Button>
+      </Link>
     </>
   );
 }
