@@ -1,9 +1,17 @@
 import { Outlet } from "react-router-dom";
+import Header from "./component/Header";
+import Footer from "./component/Footer";
+import NavBar from "./component/NavBar";
 
 function App() {
   return (
     <>
-      <Outlet />
+      <Header />
+      <div className="grid h-full custom-grid">
+        <NavBar />
+        <Outlet />
+      </div>
+      <Footer />
     </>
   );
 }

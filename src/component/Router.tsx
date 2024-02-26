@@ -6,6 +6,7 @@ import ErrorComponent from "./error_component";
 import PostWrite from "../page/Post-Write";
 import PostList from "../page/Post-List";
 import PostDetail from "../page/Post-Detail";
+import Portpolio from "../page/Portpolio";
 
 const router = createBrowserRouter([
   {
@@ -29,10 +30,14 @@ const router = createBrowserRouter([
         element: <PostList />,
         children: [
           {
-            path: "/:post_id",
+            path: ":post_id",
             element: <PostDetail />,
           },
         ],
+      },
+      {
+        path: "portpolio",
+        element: <Portpolio />,
       },
     ],
     errorElement: <ErrorComponent />,
