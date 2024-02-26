@@ -1,8 +1,9 @@
-
 function ErrorComponent() {
   return (
-    <h1>Not Found This Page</h1>
-  )
+    <div className=" flex items-center justify-center">
+      <img src="./404error.png" className="w-[50vw] h-[80vh]"></img>
+    </div>
+  );
 }
 
-export default ErrorComponent
+export default ErrorComponent;

@@ -11,7 +11,7 @@ function Login() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   return (
-    <>
+    <div>
       <Dropdown>
         <Dropdown.Toggle variant="success" id="dropdown-basic">
           Dropdown Button
@@ -42,7 +42,7 @@ function Login() {
       <Link to="/">
         <Button variant="primary">Home</Button>
       </Link>
-    </>
+    </div>
   );
 }
 export default Login;

@@ -20,18 +20,18 @@ function CustomGlobe() {
   const navigate = useNavigate();
 
   return (
-    <>
+    <div className="w-full h-full">
       <Globe
-        globeImageUrl="./splash1.avif"
-        backgroundImageUrl="./splash2.avif"
+        globeImageUrl="../panda2.jpg"
+        backgroundImageUrl="../Bamboo.png"
         arcsData={arcsData}
         arcColor={"color"}
         arcDashLength={100}
         arcDashGap={100}
         arcDashAnimateTime={500}
-        onGlobeClick={() => navigate("/login")}
+        onGlobeClick={() => navigate("login")}
       />
-    </>
+    </div>
   );
 }
 

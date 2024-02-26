@@ -11,12 +11,12 @@ import Portpolio from "../page/Portpolio";
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <CustomGlobe />,
+  },
+  {
+    path: "",
     element: <App />,
     children: [
-      {
-        path: "",
-        element: <CustomGlobe />,
-      },
       {
         path: "login",
         element: <Login />,
