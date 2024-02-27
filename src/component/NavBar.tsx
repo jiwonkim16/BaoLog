@@ -2,22 +2,25 @@ import { Link } from "react-router-dom";
 
 function NavBar() {
   return (
-    <>
-      <ul>
-        <Link to="/">
-          <li>홈으로</li>
+    <div className="bg-green-400 rounded-2xl">
+      <ul className="flex flex-col gap-5 text-xl font-semibold mt-5 fixed">
+        <Link className="no-underline text-black" to="/">
+          <li className="hover:text-white duration-500">HOME</li>
         </Link>
-        <Link to="list_post">
-          <li>포스트 목록</li>
+        <Link className="no-underline text-black" to="login">
+          <li className="hover:text-white duration-500">LOGIN</li>
         </Link>
-        <Link to="write_post">
-          <li>포스트 작성</li>
+        <Link className="no-underline text-black" to="list_post">
+          <li className="hover:text-white duration-500">Post List</li>
         </Link>
-        <Link to="portpolio">
-          <li>포트폴리오</li>
+        <Link className="no-underline text-black" to="write_post">
+          <li className="hover:text-white duration-500">Write Post</li>
+        </Link>
+        <Link className="no-underline text-black" to="portpolio">
+          <li className="hover:text-white duration-500">Portpolio</li>
         </Link>
       </ul>
-    </>
+    </div>
   );
 }
 

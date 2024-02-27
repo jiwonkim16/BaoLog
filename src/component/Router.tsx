@@ -28,13 +28,12 @@ const router = createBrowserRouter([
       {
         path: "list_post",
         element: <PostList />,
-        children: [
-          {
-            path: ":post_id",
-            element: <PostDetail />,
-          },
-        ],
       },
+      {
+        path: ":post_id",
+        element: <PostDetail />,
+      },
+
       {
         path: "portpolio",
         element: <Portpolio />,

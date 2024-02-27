@@ -2,5 +2,5 @@
 @tailwind components;
 @tailwind utilities;
 .custom-grid {
-  grid-template-columns: repeat(2, minmax(0, auto));
+  grid-template-columns: repeat(1, 250px 2fr);
 }
