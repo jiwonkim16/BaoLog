@@ -3,6 +3,7 @@ import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { db } from "../firebase";
 import { Post } from "./Post-Detail";
+
 function PostList() {
   const navigate = useNavigate();
 

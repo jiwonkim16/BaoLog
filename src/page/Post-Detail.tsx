@@ -42,13 +42,13 @@ function PostDetail() {
       {posts.map((post) => {
         if (post.id === postId) {
           return (
-            <>
+            <div key={post.id}>
               <div className="flex justify-center items-center font-bold text-4xl">
                 {post.username}
               </div>
               <hr />
               <div className="flex font-semibold text-xl">{post.savePost}</div>
-            </>
+            </div>
           );
         }
       })}
