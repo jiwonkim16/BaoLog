@@ -5,25 +5,28 @@ import { RouterProvider } from "react-router-dom";
 import router from "./component/Router";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { RecoilRoot } from "recoil";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <ToastContainer
-      position="top-right"
-      style={{
-        width: "390px",
-        fontFamily: "semibold",
-      }}
-      autoClose={1000}
-      hideProgressBar={false}
-      newestOnTop={false}
-      closeOnClick
-      rtl={false}
-      pauseOnFocusLoss={true}
-      draggable
-      limit={1}
-      theme="colored"
-    />
-    <RouterProvider router={router} />
+    <RecoilRoot>
+      <ToastContainer
+        position="top-right"
+        style={{
+          width: "390px",
+          fontFamily: "semibold",
+        }}
+        autoClose={1000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss={true}
+        draggable
+        limit={1}
+        theme="colored"
+      />
+      <RouterProvider router={router} />
+    </RecoilRoot>
   </React.StrictMode>
 );

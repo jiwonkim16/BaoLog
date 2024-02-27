@@ -1,14 +1,33 @@
 import { useState } from "react";
 import Search from "./Search";
+import { useNavigate } from "react-router-dom";
+import { auth } from "../firebase";
 
 function Header() {
   const [showModal, setShowModal] = useState(false);
-
+  const navigate = useNavigate();
   const handleCloseModal = () => setShowModal(false);
   const handleShowModal = () => setShowModal(true);
-
+  const user = auth.currentUser;
+  const onLogout = async () => {
+    if (user) {
+      const ok = confirm("정말 로그아웃 하시겠습니까?");
+      if (ok) {
+        await auth.signOut();
+        navigate("/login");
+      }
+    } else {
+      navigate("/login");
+    }
+  };
   return (
     <div className="flex justify-end my-3 items-center">
+      <div
+        className="mr-[20px] text-2xl font-semibold cursor-pointer"
+        onClick={onLogout}
+      >
+        {auth.currentUser ? "LogOut" : "Login"}
+      </div>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 512 512"
