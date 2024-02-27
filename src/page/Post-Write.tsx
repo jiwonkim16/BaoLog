@@ -12,17 +12,26 @@ import { FirebaseError } from "firebase/app";
 import { addDoc, collection } from "firebase/firestore";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { savePostAtom } from "../atom/atom";
+import { useNavigate } from "react-router-dom";
 
 function PostWrite() {
   // const [post, setPost] = useState("");
+  const navigate = useNavigate();
   const editorRef = useRef<any>(null);
   const [isLoading, setIsLoading] = useState(false);
   const savePost = useRecoilValue(savePostAtom);
   const savingPost = useSetRecoilState(savePostAtom);
   const onPost = async () => {
     const user = auth.currentUser;
-    if (!user || savePost === "" || isLoading) {
+    if (!user) {
       toast.warning("로그인 후 이용 가능합니다.");
+      return;
+    } else if (
+      savePost === "" ||
+      isLoading ||
+      savePost === "Please write post here"
+    ) {
+      toast.warning("글 작성 후 이용 가능합니다.");
       return;
     }
     try {
@@ -34,15 +43,22 @@ function PostWrite() {
         userId: user.uid,
       });
       toast.success("작성 완료");
+      navigate("/list_post");
     } catch (e) {
       if (e instanceof FirebaseError) {
         toast.error(e.message);
       }
     } finally {
       setIsLoading(false);
+      savingPost("");
     }
   };
   const onSave = () => {
+    const user = auth.currentUser;
+    if (!user) {
+      toast.warning("로그인 후 이용 가능합니다.");
+      return;
+    }
     let markdownPost = editorRef.current.getInstance().getMarkdown();
     // setPost(markdownPost);
     savingPost(markdownPost);
