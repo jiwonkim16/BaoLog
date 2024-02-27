@@ -16,8 +16,9 @@ function PostList() {
     );
     const snapshot = await getDocs(postQuery);
     const postList = snapshot.docs.map((doc) => {
-      const { savePost, userId, username, createdAt } = doc.data();
+      const { saveTitle, savePost, userId, username, createdAt } = doc.data();
       return {
+        saveTitle,
         savePost,
         userId,
         username,
@@ -31,7 +32,7 @@ function PostList() {
     fetchPost();
   }, []);
   return (
-    <div className="flex flex-wrap gap-5">
+    <div className="flex flex-wrap gap-5 overflow-y-scroll">
       {posts.map((post) => (
         <ul
           key={post.id}
@@ -42,7 +43,7 @@ function PostList() {
             <figure className="bg-center bg-cover bg-no-repeat h-[0] pb-[60%] bg-[url('../panda2.jpg')]">
               <img src="../panda2.jpg" className="hidden" />
             </figure>
-            <div className="flex-1 bg-white">{post.savePost}</div>
+            <div className="flex-1 bg-white">{post.saveTitle}</div>
           </li>
         </ul>
       ))}

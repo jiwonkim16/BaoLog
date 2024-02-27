@@ -2,8 +2,11 @@ import { Link, useParams } from "react-router-dom";
 import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { db } from "../firebase";
+import { Viewer } from "@toast-ui/react-editor";
+import "@toast-ui/editor/dist/toastui-editor.css"; // 에디터 스타일 적용
 
 export interface Post {
+  saveTitle: string;
   id: string;
   createdAt: number;
   savePost: string;
@@ -22,8 +25,9 @@ function PostDetail() {
     );
     const snapshot = await getDocs(postQuery);
     const postList = snapshot.docs.map((doc) => {
-      const { savePost, userId, username, createdAt } = doc.data();
+      const { saveTitle, savePost, userId, username, createdAt } = doc.data();
       return {
+        saveTitle,
         savePost,
         userId,
         username,
@@ -42,17 +46,16 @@ function PostDetail() {
       {posts.map((post) => {
         if (post.id === postId) {
           return (
-            <div key={post.id}>
-              <div className="flex justify-center items-center font-bold text-4xl">
-                {post.username}
+            <div key={post.id} className="h-[80%] mx-4 overflow-y-scroll">
+              <div>{post.saveTitle}</div>
+              <div className="flex border-[5px] h-[95%]">
+                <Viewer initialValue={post.savePost} />
               </div>
-              <hr />
-              <div className="flex font-semibold text-xl">{post.savePost}</div>
             </div>
           );
         }
       })}
-      <div>
+      <div className="mt-4">
         <Link to="/list_post">
           <button>뒤로가기</button>
         </Link>

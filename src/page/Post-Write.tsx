@@ -11,16 +11,21 @@ import { toast } from "react-toastify";
 import { FirebaseError } from "firebase/app";
 import { addDoc, collection } from "firebase/firestore";
 import { useRecoilValue, useSetRecoilState } from "recoil";
-import { savePostAtom } from "../atom/atom";
+import { savePostAtom, saveTitleAtom } from "../atom/atom";
 import { useNavigate } from "react-router-dom";
 
 function PostWrite() {
-  // const [post, setPost] = useState("");
+  const [title, setTitle] = useState("");
   const navigate = useNavigate();
   const editorRef = useRef<any>(null);
   const [isLoading, setIsLoading] = useState(false);
   const savePost = useRecoilValue(savePostAtom);
+  const saveTitle = useRecoilValue(saveTitleAtom);
   const savingPost = useSetRecoilState(savePostAtom);
+  const savingTitle = useSetRecoilState(saveTitleAtom);
+  const onChangeTitle = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setTitle(event.target.value);
+  };
   const onPost = async () => {
     const user = auth.currentUser;
     if (!user) {
@@ -28,15 +33,17 @@ function PostWrite() {
       return;
     } else if (
       savePost === "" ||
+      saveTitle === "" ||
       isLoading ||
       savePost === "Please write post here"
     ) {
-      toast.warning("글 작성 후 이용 가능합니다.");
+      toast.warning("제목, 내용 저장 후 이용 가능합니다.");
       return;
     }
     try {
       setIsLoading(true);
       await addDoc(collection(db, "post"), {
+        saveTitle,
         savePost,
         createdAt: Date.now(),
         username: "BaoFM",
@@ -60,26 +67,43 @@ function PostWrite() {
       return;
     }
     let markdownPost = editorRef.current.getInstance().getMarkdown();
-    // setPost(markdownPost);
+    savingTitle(title);
     savingPost(markdownPost);
 
     toast.success("저장 완료!");
   };
 
   return (
-    <div>
+    <div className="mx-4">
+      <form>
+        <label htmlFor="title">제목</label>
+        <input
+          type="text"
+          onChange={onChangeTitle}
+          id="title"
+          className="border"
+        />
+      </form>
       <Editor
         ref={editorRef}
-        height="500px"
+        height="600px"
         previewStyle="vertical"
         theme="dark"
         plugins={[colorSyntax]}
         initialValue="Please write post here"
       />
-      <Button variant="success" className="mt-3" onClick={onSave}>
+      <Button
+        variant="primary"
+        className="mt-3 mr-4 w-[10%] h-[5.5%]"
+        onClick={onSave}
+      >
         저장하기
       </Button>
-      <Button variant="success" className="mt-3" onClick={onPost}>
+      <Button
+        variant="success"
+        className="mt-3 w-[10%] h-[5.5%]"
+        onClick={onPost}
+      >
         {!isLoading ? "작성하기" : "작성 중.."}
       </Button>
     </div>

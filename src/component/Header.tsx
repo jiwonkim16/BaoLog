@@ -2,6 +2,7 @@ import { useState } from "react";
 import Search from "./Search";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../firebase";
+import { toast } from "react-toastify";
 
 function Header() {
   const [showModal, setShowModal] = useState(false);
@@ -14,6 +15,7 @@ function Header() {
       const ok = confirm("정말 로그아웃 하시겠습니까?");
       if (ok) {
         await auth.signOut();
+        toast.error("로그아웃 되셨습니다.");
         navigate("/login");
       }
     } else {
