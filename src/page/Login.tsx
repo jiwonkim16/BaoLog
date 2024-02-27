@@ -43,12 +43,12 @@ function Login() {
         <input
           type="email"
           onChange={onChangeId}
-          className="border-4 focus:outline-none focus:ring focus:ring-green-400 mr-3 w-[30%] h-[6%]"
+          className="border-4 border-green-200 focus:outline-none focus:ring focus:ring-green-400 mr-3 w-[30%] h-[6%]"
         />
         <input
           type="password"
           onChange={onChangePassword}
-          className="border-4 focus:outline-none focus:ring focus:ring-green-400 mr-3 w-[30%] h-[6%]"
+          className="border-4 border-green-200 focus:outline-none focus:ring focus:ring-green-400 mr-3 w-[30%] h-[6%]"
         />
         <Button variant="success" className="w-[20%]" onClick={onSubmit}>
           <span className="font-bold text-center text-lg">

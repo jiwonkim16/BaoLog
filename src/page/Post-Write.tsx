@@ -76,17 +76,19 @@ function PostWrite() {
   return (
     <div className="mx-4">
       <form>
-        <label htmlFor="title">제목</label>
+        <label className="font-semibold text-2xl" htmlFor="title">
+          Title :
+        </label>
         <input
           type="text"
           onChange={onChangeTitle}
           id="title"
-          className="border"
+          className="ml-2 border-2 border-green-200 h-[40px] focus:outline-none focus:ring focus:ring-green-400 w-[40%] mb-4 rounded-2xl"
         />
       </form>
       <Editor
         ref={editorRef}
-        height="600px"
+        height="560px"
         previewStyle="vertical"
         theme="dark"
         plugins={[colorSyntax]}

@@ -47,17 +47,21 @@ function PostDetail() {
         if (post.id === postId) {
           return (
             <div key={post.id} className="h-[80%] mx-4 overflow-y-scroll">
-              <div>{post.saveTitle}</div>
-              <div className="flex border-[5px] h-[95%]">
+              <div className="font-bold text-4xl mb-3">
+                제목 : {post.saveTitle}
+              </div>
+              <div className="flex border-[3px] border-green-400 h-[90%]">
                 <Viewer initialValue={post.savePost} />
               </div>
             </div>
           );
         }
       })}
-      <div className="mt-4">
+      <div className="mt-4 flex items-center ml-5">
         <Link to="/list_post">
-          <button>뒤로가기</button>
+          <button className="bg-green-600 text-white rounded-3xl text-lg px-[15px] py-[8px] hover:bg-green-800 duration-700">
+            뒤로가기
+          </button>
         </Link>
       </div>
     </div>
