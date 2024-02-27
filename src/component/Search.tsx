@@ -22,7 +22,7 @@ function Search({ show, onClose }: Props) {
         <Button variant="secondary" onClick={onClose}>
           닫기
         </Button>
-        <Button variant="primary">검색하기</Button>
+        <Button variant="success">검색하기</Button>
       </Modal.Footer>
     </Modal>
   );
