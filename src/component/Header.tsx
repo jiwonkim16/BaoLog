@@ -69,7 +69,7 @@ function Header() {
             </Dropdown.Item>
             <Dropdown.Item href="/portpolio">
               <svg
-                xmlns="http://www.w3.org/2000/svg"
+                xmlns="https://cliff-couch-ca8.notion.site/db8baf05e21e4df09bf88b258c08dade?pvs=4"
                 viewBox="0 0 384 512"
                 className="w-7 h-7 cursor-pointer"
               >
