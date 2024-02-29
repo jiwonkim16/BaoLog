@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function NavBar() {
   return (
-    <div className="bg-green-400 rounded-2xl">
+    <div className=" bg-gradient-to-r from-green-300 to-green-400 opacity-75 rounded-2xl">
       <ul className="flex flex-col gap-5 text-xl font-semibold mt-5 fixed">
         <Link className="no-underline text-black" to="/">
           <li className="hover:text-white duration-500">HOME</li>
