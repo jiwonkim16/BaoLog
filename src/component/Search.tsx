@@ -1,5 +1,6 @@
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
+import { toast } from "react-toastify";
 
 interface Props {
   show: boolean;
@@ -7,6 +8,9 @@ interface Props {
 }
 
 function Search({ show, onClose }: Props) {
+  const onSearch = () => {
+    toast.warning("구현 중입니다. 조금만 기다려 주세요🔥");
+  };
   return (
     <Modal show={show} onHide={onClose}>
       <Modal.Header closeButton>
@@ -22,7 +26,9 @@ function Search({ show, onClose }: Props) {
         <Button variant="secondary" onClick={onClose}>
           닫기
         </Button>
-        <Button variant="success">검색하기</Button>
+        <Button variant="success" onClick={onSearch}>
+          검색하기
+        </Button>
       </Modal.Footer>
     </Modal>
   );

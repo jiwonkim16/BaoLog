@@ -46,11 +46,11 @@ function PostDetail() {
       {posts.map((post) => {
         if (post.id === postId) {
           return (
-            <div key={post.id} className="h-[80%] mx-4 overflow-y-scroll">
+            <div key={post.id} className="h-[80%] mx-4">
               <div className="font-bold text-4xl mb-3">
                 제목 : {post.saveTitle}
               </div>
-              <div className="flex border-[3px] border-green-400 h-[90%]">
+              <div className="flex border-[3px] border-green-400 h-[90%] overflow-y-scroll">
                 <Viewer initialValue={post.savePost} />
               </div>
             </div>
