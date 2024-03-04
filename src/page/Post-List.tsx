@@ -32,11 +32,11 @@ function PostList() {
     fetchPost();
   }, []);
   return (
-    <div className="post-list-grid overflow-y-scroll">
+    <div className="post-list-grid overflow-y-hidden">
       {posts.map((post) => (
         <ul
           key={post.id}
-          className="flex justify-center h-full"
+          className="flex justify-center"
           onClick={() => navigate(`/:${post.id}`)}
         >
           <li className="flex flex-col h-[250px] w-[70%]  cursor-pointer">

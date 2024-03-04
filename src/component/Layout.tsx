@@ -4,9 +4,9 @@ import NavBar from "./NavBar";
 
 function Layout() {
   return (
-    <div className="overflow-x-hidden  h-[100vh] overflow-y-hidden bg-green-200 bg-opacity-45">
+    <div className="overflow-x-hidden  h-[100vh] bg-green-200 bg-opacity-45 font-[yg-jalnan]">
       <Header />
-      <div className="grid h-[100%] custom-grid">
+      <div className="grid custom-grid">
         <NavBar />
         <Outlet />
       </div>
