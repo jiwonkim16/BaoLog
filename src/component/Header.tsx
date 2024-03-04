@@ -24,7 +24,7 @@ function Header() {
     }
   };
   return (
-    <div className="flex justify-end mr-5 my-3 items-center">
+    <div className="flex justify-end mr-5 items-center bg-green-500 h-[8vh] w-full px-3">
       <div
         className="mr-[20px] text-2xl font-semibold cursor-pointer hover:text-[#03C75A] duration-700"
         onClick={onLogout}

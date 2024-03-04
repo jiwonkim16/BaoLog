@@ -38,8 +38,8 @@ function Login() {
     }
   };
   return (
-    <div>
-      <form className="flex flex-col items-center justify-center h-full gap-6">
+    <div className="h-[90vh]">
+      <form className="flex h-full flex-col items-center justify-center gap-6">
         <input
           type="email"
           onChange={onChangeId}

@@ -74,7 +74,7 @@ function PostWrite() {
   };
 
   return (
-    <div className="mx-4">
+    <div className="mx-4 mt-3">
       <form>
         <label className="font-semibold text-2xl" htmlFor="title">
           Title :
