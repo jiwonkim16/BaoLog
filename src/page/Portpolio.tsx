@@ -19,21 +19,21 @@ function Portfolio() {
       </div>
       <div className="mb-8">
         <div className="text-3xl font-bold mb-2">About Me</div>
-        <div className="text-gray-700 flex items-center justify-around flex-wrap">
+        <div className="text-gray-700 flex items-center justify-around bg-purple-200 rounded-3xl p-3 flex-wrap">
           <div>
-            <div className="flex justify-center">주소</div>
+            <div className="flex justify-center mb-2">주소</div>
             <span>경기 안산시</span>
           </div>
           <div>
-            <div className="flex justify-center">학력</div>
+            <div className="flex justify-center mb-2">학력</div>
             <span>청주대학교 졸업</span>
           </div>
           <div>
-            <div className="flex justify-center">연락처</div>
+            <div className="flex justify-center mb-2">연락처</div>
             <span>010.4160.2006</span>
           </div>
           <div>
-            <div className="flex justify-center">E-Mail</div>
+            <div className="flex justify-center mb-2">E-Mail</div>
             <span>stayby16@naver.com</span>
           </div>
         </div>
@@ -45,7 +45,7 @@ function Portfolio() {
       </div>
       <div className="mb-8">
         <div className="text-3xl font-bold mb-2">Projects</div>
-        <div>
+        <div className="bg-white rounded-3xl p-3">
           <div className="mb-4">
             <div className="font-bold">Project Name</div>
             <div>기간 / 인원</div>

@@ -43,7 +43,7 @@ function PostList() {
             <div className="h-0 pb-[45%] bg-gray-300 bg-no-repeat bg-center bg-cover bg-[url('../panda2.jpg')] rounded-2xl shadow-md hover:bg-top duration-700">
               <img src="../panda2.jpg" className="hidden" />
             </div>
-            <div className="h-[20%] flex p-2 items-center justify-center font-bold text-xl bg-[#03C75A] rounded-2xl mt-2 shadow-md hover:text-white duration-700">
+            <div className="h-[20%] flex p-2 items-center justify-center font-bold text-xl bg-[#03C75A] opacity-60 text-white rounded-2xl mt-2 shadow-md hover:opacity-100 duration-700">
               {post.saveTitle}
             </div>
           </li>

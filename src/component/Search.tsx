@@ -24,7 +24,12 @@ function Search({ show, onClose }: Props) {
     const q = query(ref, where("saveTitle", "==", keyword));
     try {
       const querySnapshot = await getDocs(q);
+      if (querySnapshot.empty) {
+        toast.error("검색 결과가 없습니다.");
+        return;
+      }
       querySnapshot.forEach((doc) => {
+        toast.success("검색 결과 페이지로 이동");
         navigate(doc.id);
       });
     } catch (e) {

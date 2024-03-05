@@ -27,8 +27,8 @@ function CustomGlobe() {
       <Globe
         globeImageUrl="../panda2.jpg"
         backgroundImageUrl="../Bamboo.png"
-        arcColor={"color"}
-        labelText="duddududu"
+        // arcColor={"color"}
+        // labelText="duddududu"
         onGlobeClick={() => navigate("login")}
       />
     </div>

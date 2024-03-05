@@ -78,7 +78,7 @@ function PostDetail() {
                 <div className="font-bold text-4xl mb-3">
                   제목 : {post.saveTitle}
                 </div>
-                <div className="flex border-[3px] border-green-400 h-[90%] overflow-y-scroll">
+                <div className="flex border-[3px] border-green-400 bg-white h-[90%] overflow-y-scroll">
                   <Viewer initialValue={post.savePost} />
                 </div>
               </div>
