@@ -67,9 +67,9 @@ function Header() {
               </svg>
               Tech Blog
             </Dropdown.Item>
-            <Dropdown.Item href="https://cliff-couch-ca8.notion.site/db8baf05e21e4df09bf88b258c08dade?pvs=4">
+            <Dropdown.Item href="https://cliff-couch-ca8.notion.site/db8baf05e21e4df09bf88b258c08dade">
               <svg
-                xmlns="https://cliff-couch-ca8.notion.site/db8baf05e21e4df09bf88b258c08dade?pvs=4"
+                xmlns="https://cliff-couch-ca8.notion.site/db8baf05e21e4df09bf88b258c08dade"
                 viewBox="0 0 384 512"
                 className="w-7 h-7 cursor-pointer"
               >
