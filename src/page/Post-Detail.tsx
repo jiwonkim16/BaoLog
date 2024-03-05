@@ -73,8 +73,8 @@ function PostDetail() {
       {posts.map((post) => {
         if (post.id === postId) {
           return (
-            <>
-              <div key={post.id} className="h-[80%] mx-4">
+            <div key={post.id} className="h-full">
+              <div className="h-[80%] mx-4">
                 <div className="font-bold text-4xl mb-3">
                   제목 : {post.saveTitle}
                 </div>
@@ -97,7 +97,7 @@ function PostDetail() {
                     : "본인 게시글만 삭제 가능"}
                 </button>
               </div>
-            </>
+            </div>
           );
         }
       })}
