@@ -21,7 +21,7 @@ function CustomGlobe() {
 
   return (
     <div className="w-full h-full">
-      <h1 className="text-white font-semibold font-sans absolute top-5 left-[40%] z-[10]">
+      <h1 className="text-white font-semibold font-[yg-jalnan] absolute top-5 left-[40%] z-[10]">
         판다를 클릭하세요!
       </h1>
       <Globe

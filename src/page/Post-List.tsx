@@ -32,7 +32,7 @@ function PostList() {
     fetchPost();
   }, []);
   return (
-    <div className="post-list-grid overflow-y-hidden mt-5 h-[100%]">
+    <div className="post-list-grid overflow-y-hidden mt-3 h-[100%]">
       {posts.map((post) => (
         <ul
           key={post.id}
