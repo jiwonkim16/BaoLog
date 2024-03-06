@@ -69,16 +69,16 @@ function PostDetail() {
   }, []);
 
   return (
-    <div className="flex flex-col h-[88vh] mt-4">
+    <div className="flex flex-col mt-4">
       {posts.map((post) => {
         if (post.id === postId) {
           return (
-            <div key={post.id} className="h-full">
-              <div className="h-[80%] mx-4">
+            <div key={post.id} className="">
+              <div className="mx-4">
                 <div className="font-bold text-4xl mb-3">
                   제목 : {post.saveTitle}
                 </div>
-                <div className="flex border-[3px] border-green-400 bg-white h-[90%] overflow-y-scroll">
+                <div className="flex border-[3px] border-green-400 bg-white overflow-y-scroll">
                   <Viewer initialValue={post.savePost} />
                 </div>
               </div>
