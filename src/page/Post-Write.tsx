@@ -88,7 +88,7 @@ function PostWrite() {
       </form>
       <Editor
         ref={editorRef}
-        height="560px"
+        height="750px"
         previewStyle="vertical"
         theme="dark"
         plugins={[colorSyntax]}

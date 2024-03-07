@@ -47,22 +47,34 @@ function Portfolio() {
         <div className="text-3xl font-bold mb-2">Projects</div>
         <div className="bg-white rounded-3xl p-3">
           <div className="mb-4">
-            <div className="font-bold">Project Name</div>
-            <div>기간 / 인원</div>
+            <div className="font-bold">Bid Panda</div>
+            <div>BE 4명, FE 2명, DE 1명 / 6주</div>
             <div>프로젝트 이미지</div>
-            <div className="text-gray-700">프로젝트 설명</div>
-            <div>프로젝트 기능</div>
-            <div>프로젝트 깃허브 링크</div>
-            <div>프로젝트 URL</div>
-            <div>프로젝트 기술 스택</div>
+            <div className="text-gray-700">경매 기반 중고거래 서비스</div>
+            <div>
+              <span>경매품 CRUD, 이미지 업로드</span>
+              <span>1:1 실시간 채팅</span>
+              <span>프로젝트 Routing</span>
+              <span>키워드 검색</span>
+              <span>Infinite Scroll</span>
+              <span>경매시간 Timer</span>
+              <span>관심상품 등록 / 해제</span>
+              <span>User Feedback</span>
+            </div>
+            <div>https://github.com/jiwonkim16/BidPanda_frontend</div>
+            <div>https://bidpanda.app/</div>
+            <div>
+              React, Typescript, React-Query, Axios, Vite, Tailwind CSS,
+              Websocket, SSE
+            </div>
           </div>
         </div>
       </div>
 
       <div className="mb-8">
         <div className="text-xl font-bold mb-2">Career</div>
-        <div className="mb-2">커리어 이미지</div>
-        <div className="text-gray-700">커리어 설명</div>
+        <div className="mb-2">항해99</div>
+        <div className="text-gray-700">육군 정보통신 장교</div>
       </div>
     </div>
   );
