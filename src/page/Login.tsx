@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import { auth } from "../firebase";
 import { FirebaseError } from "firebase/app";
 import { useNavigate } from "react-router-dom";
+import Loading from "../component/Loading";
 
 function Login() {
   const [id, setId] = useState("");
@@ -38,24 +39,28 @@ function Login() {
     }
   };
   return (
-    <div className="h-[90vh]">
-      <form className="flex h-full flex-col items-center justify-center gap-6">
-        <input
-          type="email"
-          onChange={onChangeId}
-          className="rounded-2xl  focus:outline-none focus:ring focus:ring-green-400 mr-3 w-[25%] h-[6%]"
-        />
-        <input
-          type="password"
-          onChange={onChangePassword}
-          className="rounded-2xl focus:outline-none focus:ring focus:ring-green-400 mr-3 w-[25%] h-[6%]"
-        />
-        <Button variant="success" className="w-[20%]" onClick={onSubmit}>
-          <span className="font-bold text-center text-lg">
-            {isLoading ? "로그인 중.." : "로그인"}
-          </span>
-        </Button>
-      </form>
+    <div className="h-[90vh] w-[90vw]">
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <form className="flex h-full flex-col items-center justify-center gap-6">
+          <input
+            type="email"
+            onChange={onChangeId}
+            className="rounded-2xl  focus:outline-none focus:ring focus:ring-green-400 mr-3 w-[25%] h-[6%]"
+          />
+          <input
+            type="password"
+            onChange={onChangePassword}
+            className="rounded-2xl focus:outline-none focus:ring focus:ring-green-400 mr-3 w-[25%] h-[6%]"
+          />
+          <Button variant="success" className="w-[20%]" onClick={onSubmit}>
+            <span className="font-bold text-center text-lg">
+              {isLoading ? "로그인 중.." : "로그인"}
+            </span>
+          </Button>
+        </form>
+      )}
     </div>
   );
 }
