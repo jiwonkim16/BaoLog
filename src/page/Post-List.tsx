@@ -32,18 +32,18 @@ function PostList() {
     fetchPost();
   }, []);
   return (
-    <div className="post-list-grid  mt-3">
+    <div className="post-list-grid">
       {posts.map((post) => (
         <ul
           key={post.id}
           className="flex justify-center"
           onClick={() => navigate(`/:${post.id}`)}
         >
-          <li className="flex flex-col h-[350px] w-[70%]  cursor-pointer">
+          <li className="flex flex-col h-[350px] w-[70%]  cursor-pointer gap-3 justify-center rounded-3xl">
             <div className="h-0 pb-[45%] bg-gray-300 bg-no-repeat bg-center bg-cover bg-[url('../panda2.jpg')] rounded-2xl shadow-md hover:bg-top duration-700">
               <img src="../panda2.jpg" className="hidden" />
             </div>
-            <div className="h-[15%] flex p-2 items-center justify-center font-bold text-xl bg-[#03C75A] opacity-60 text-white rounded-2xl mt-2 shadow-md hover:opacity-100 duration-700">
+            <div className="h-[15%] flex p-2 items-center justify-center font-bold text-xl bg-[#03C75A] text-white rounded-2xl mt-2 shadow-md hover:opacity-100 duration-700">
               {post.saveTitle}
             </div>
           </li>

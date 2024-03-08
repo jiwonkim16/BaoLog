@@ -4,8 +4,8 @@ import NavBar from "./NavBar";
 
 function Layout() {
   return (
-    <div className="overflow-x-hidden w-[100vw] h-[100vh] bg-green-200 bg-opacity-45 font-[yg-jalnan]">
-      <div className="fixed w-full">
+    <div className="overflow-x-hidden w-[100vw] h-[100vh] bg-[url('../대나무.jpg')] bg-cover bg-center font-[yg-jalnan]">
+      <div className="w-full">
         <Header />
       </div>
       <div className="grid custom-grid mt-20">
