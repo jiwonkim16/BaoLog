@@ -25,7 +25,7 @@ function CustomGlobe() {
         판다를 클릭하세요!
       </h1>
       <Globe
-        globeImageUrl="../panda2.jpg"
+        globeImageUrl="../panda2.webp"
         backgroundImageUrl="../Bamboo.png"
         // arcColor={"color"}
         // labelText="duddududu"
